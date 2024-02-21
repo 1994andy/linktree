@@ -1,0 +1,164 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* para formatar o css, colocar essa regra universal e zerar o padding e o margin
+deixar como box-sizing. */
+
+:root {
+    --text-color: white;
+    --bg-url: url(./bg-mobile.jpg);
+    --stroke-color: 1px solid #b4b8b73f;
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.10);
+    --switch-bg-url: url(./moon.svg);
+}
+
+.light {
+    --text-color: rgba(231, 37, 183, 0.753);
+    --bg-url: url(./bg-mobile-light.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.05);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.10);
+    --switch-bg-url: url(./sun.svg);
+}
+
+body {
+    background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+#container {
+    width: 360px;
+    margin: 56px auto 0px;
+    padding: 0 24px;
+    /* uma dica interessante, caso vc se perca na questão de posicionamento, é criar um border: 1px red: 
+    criando isso, vc consegue ver uma linha e definir o tamanho e parametro de posicionamento das caixas que vc montar.*/
+}
+
+#profile {
+    text-align: center;
+    padding: 24px;
+
+}
+
+#profile img {
+    width: 120px;
+}
+
+#profile p {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+/* switch buttons */
+
+
+#switch {
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: white var(--switch-bg-url) center no-repeat;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.light #switch button{ 
+    right: 0;
+    left: initial;
+
+} 
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 26px;
+    border-radius: 9999px;
+    border: 1px solid var(--stroke-color);
+    background: var(--surface-color);
+    --webkit-backdrop-filter: blur(4px);
+}
+
+
+/* links */
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 0px;
+
+}
+
+ul li a {
+    display: flex;
+    justify-content: center;
+    padding: 16px 24px;
+    align-items: center;
+    border-radius: 20px;
+    background: var(--surface-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+    border: 1px solid #b4b8b73f;
+
+}
+
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+}
+
+#social-links {
+    display: flex;
+    gap: 32px;
+    padding: 24px;
+    justify-content: center;
+    font-size: 24px;
+    transition: all 0.5s;
+}
+
+#social-links a {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+
+}
+
+/* quando eu precisar alinhar qualquer item para uma linha do meio, é só seguir essa receita */
+
+#social-links a:hover {
+
+    background: var(--highlight-color);
+    border-radius: 50%;
+    transition: background 0.5s;
+
+}
+
+footer {
+    font-size: 13px;
+    margin-bottom: 24px;
+    margin-left: 24px;
+}
