@@ -81,13 +81,17 @@ body * {
     z-index: 1;
     top: 50%;
     transform: translateY(-50%);
+    animation: slide-out 0.5s;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
+}
+
+.light #switch button {
+    animation: slide-in 0.5s forwards;
 
 }
-.light #switch button{ 
-    right: 0;
-    left: initial;
-
-} 
 
 #switch span {
     display: block;
@@ -162,4 +166,23 @@ footer {
     font-size: 13px;
     margin-bottom: 24px;
     margin-left: 24px;
+}
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
 }
