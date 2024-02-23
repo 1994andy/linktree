@@ -164,8 +164,8 @@ ul li a:hover {
 
 footer {
     font-size: 13px;
-    margin-bottom: 24px;
-    margin-left: 24px;
+    margin-bottom: 42px;
+    margin-left: 128px;
 }
 
 @keyframes slide-in {
